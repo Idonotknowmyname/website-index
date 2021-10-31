@@ -1,2 +1,2 @@
 # The static part of Matteo Maggiolo's website
-Yes, that's how it is
+Built with Jekyll and the [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/).

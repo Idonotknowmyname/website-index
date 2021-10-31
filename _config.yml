@@ -1,16 +1,93 @@
 title: M. Maggiolo's website
+subtitle: AI Engineer
 email: maggiolo.matteo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A lazily made Resume/blog website about me.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  Idonotknowmyname
+  A small resume/blog website for Matteo Maggiolo
+url: "https://idonotknowmyname.github.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/website-index" # the subpath of your site, e.g. /blog
+github_username: Idonotknowmyname
+
+search: true
 
 # Build settings
-theme: minima
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+markdown: kramdown
+remote_theme: https://github.com/mmistakes/minimal-mistakes
+minimal_mistakes_skin: air
+
+
+# Outputting
+permalink: /blog/:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num/
+
 
 include:
-  - Gemfile
-  - Gemfile.lock
+  - _pages
+
+
+author:
+  name   : "Matteo Maggiolo"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "My awesome biography constrained to a sentence or two goes here."
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
+
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
